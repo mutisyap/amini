@@ -1,0 +1,131 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "organization",
+            "otherEntityName": "organization",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "EventType",
+            "fieldValues": "MASS,ADORATION,RETREAT,ROSARY,WAY_OF_THE_CROSS"
+        },
+        {
+            "fieldName": "dayOfWeek",
+            "fieldType": "DayOfWeek",
+            "fieldValues": "MONDAY,TUESDAY"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ageLimit",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "host",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "venue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cycle",
+            "fieldType": "EventCycle",
+            "fieldValues": "ONE_OFF,DAILY,WEEKLY,MONTHLY"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdatedOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "charges",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "contact1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact1Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact2Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact3Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "charged",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "contentStatus",
+            "fieldType": "ContentStatus",
+            "fieldValues": "DRAFT,PUBLISHED,UNPUBLISHED,DELETED,BLOCKED"
+        },
+        {
+            "fieldName": "uuid",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180626033607",
+    "entityTableName": "tbl_general_events",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Event</span> {{vm.event.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.event.name}}</span>
+        </dd>
+        <dt><span>Day</span></dt>
+        <dd>
+            <span>{{vm.event.day | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.event.description}}</span>
+        </dd>
+        <dt><span>Language</span></dt>
+        <dd>
+            <span>{{vm.event.language}}</span>
+        </dd>
+        <dt><span>Content Status</span></dt>
+        <dd>
+            <span>{{vm.event.contentStatus}}</span>
+        </dd>
+        <dt><span>Uuid</span></dt>
+        <dd>
+            <span>{{vm.event.uuid}}</span>
+        </dd>
+        <dt><span>General Event</span></dt>
+        <dd>
+            <a ui-sref="general-event-detail({id:vm.event.generalEventId})">{{vm.event.generalEventName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="event-detail.edit({id:vm.event.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

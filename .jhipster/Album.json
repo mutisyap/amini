@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objectUuid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdatedOn",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20180626033609",
+    "entityTableName": "tbl_albums",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

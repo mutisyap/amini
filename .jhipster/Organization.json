@@ -1,0 +1,81 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "OrganizationType",
+            "fieldValues": "CHURCH,CHARITY,RETREAT,OTHER"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "latitude",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "longitude",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdatedOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact1Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact2Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contact3Value",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uuid",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180626033606",
+    "entityTableName": "tbl_organizations",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

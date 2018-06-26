@@ -1,0 +1,92 @@
+<div>
+    <h2>Organizations</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="organization.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Organization
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="latitude"><span>Latitude</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longitude"><span>Longitude</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdBy"><span>Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="createdOn"><span>Created On</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lastUpdatedBy"><span>Last Updated By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lastUpdatedOn"><span>Last Updated On</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact1"><span>Contact 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact1Value"><span>Contact 1 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact2"><span>Contact 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact2Value"><span>Contact 2 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact3"><span>Contact 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contact3Value"><span>Contact 3 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="contentStatus"><span>Content Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="uuid"><span>Uuid</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="organization in vm.organizations track by organization.id">
+                    <td><a ui-sref="organization-detail({id:organization.id})">{{organization.id}}</a></td>
+                    <td>{{organization.type}}</td>
+                    <td>{{organization.name}}</td>
+                    <td>{{organization.latitude}}</td>
+                    <td>{{organization.longitude}}</td>
+                    <td>{{organization.createdBy}}</td>
+                    <td>{{organization.createdOn | date:'medium'}}</td>
+                    <td>{{organization.lastUpdatedBy}}</td>
+                    <td>{{organization.lastUpdatedOn | date:'medium'}}</td>
+                    <td>{{organization.description}}</td>
+                    <td>{{organization.contact1}}</td>
+                    <td>{{organization.contact1Value}}</td>
+                    <td>{{organization.contact2}}</td>
+                    <td>{{organization.contact2Value}}</td>
+                    <td>{{organization.contact3}}</td>
+                    <td>{{organization.contact3Value}}</td>
+                    <td>{{organization.contentStatus}}</td>
+                    <td>{{organization.uuid}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="organization-detail({id:organization.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="organization.edit({id:organization.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="organization.delete({id:organization.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

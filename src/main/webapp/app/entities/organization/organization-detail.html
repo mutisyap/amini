@@ -1,0 +1,87 @@
+
+<div>
+    <h2><span>Organization</span> {{vm.organization.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{vm.organization.type}}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.organization.name}}</span>
+        </dd>
+        <dt><span>Latitude</span></dt>
+        <dd>
+            <span>{{vm.organization.latitude}}</span>
+        </dd>
+        <dt><span>Longitude</span></dt>
+        <dd>
+            <span>{{vm.organization.longitude}}</span>
+        </dd>
+        <dt><span>Created By</span></dt>
+        <dd>
+            <span>{{vm.organization.createdBy}}</span>
+        </dd>
+        <dt><span>Created On</span></dt>
+        <dd>
+            <span>{{vm.organization.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Last Updated By</span></dt>
+        <dd>
+            <span>{{vm.organization.lastUpdatedBy}}</span>
+        </dd>
+        <dt><span>Last Updated On</span></dt>
+        <dd>
+            <span>{{vm.organization.lastUpdatedOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.organization.description}}</span>
+        </dd>
+        <dt><span>Contact 1</span></dt>
+        <dd>
+            <span>{{vm.organization.contact1}}</span>
+        </dd>
+        <dt><span>Contact 1 Value</span></dt>
+        <dd>
+            <span>{{vm.organization.contact1Value}}</span>
+        </dd>
+        <dt><span>Contact 2</span></dt>
+        <dd>
+            <span>{{vm.organization.contact2}}</span>
+        </dd>
+        <dt><span>Contact 2 Value</span></dt>
+        <dd>
+            <span>{{vm.organization.contact2Value}}</span>
+        </dd>
+        <dt><span>Contact 3</span></dt>
+        <dd>
+            <span>{{vm.organization.contact3}}</span>
+        </dd>
+        <dt><span>Contact 3 Value</span></dt>
+        <dd>
+            <span>{{vm.organization.contact3Value}}</span>
+        </dd>
+        <dt><span>Content Status</span></dt>
+        <dd>
+            <span>{{vm.organization.contentStatus}}</span>
+        </dd>
+        <dt><span>Uuid</span></dt>
+        <dd>
+            <span>{{vm.organization.uuid}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="organization-detail.edit({id:vm.organization.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

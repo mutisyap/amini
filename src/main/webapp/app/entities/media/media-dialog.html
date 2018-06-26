@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMediaLabel">Create or edit a Media</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.media.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.media.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_caption">Caption</label>
+            <input type="text" class="form-control" name="caption" id="field_caption"
+                    ng-model="vm.media.caption"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createdBy">Created By</label>
+            <input type="text" class="form-control" name="createdBy" id="field_createdBy"
+                    ng-model="vm.media.createdBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createdOn">Created On</label>
+                <div class="input-group">
+                    <input id="field_createdOn" type="text" class="form-control" name="createdOn" datetime-picker="{{dateformat}}" ng-model="vm.media.createdOn" is-open="vm.datePickerOpenStatus.createdOn"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('createdOn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastUpdatedBy">Last Updated By</label>
+            <input type="text" class="form-control" name="lastUpdatedBy" id="field_lastUpdatedBy"
+                    ng-model="vm.media.lastUpdatedBy"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lastUpdatedOn">Last Updated On</label>
+                <div class="input-group">
+                    <input id="field_lastUpdatedOn" type="text" class="form-control" name="lastUpdatedOn" datetime-picker="{{dateformat}}" ng-model="vm.media.lastUpdatedOn" is-open="vm.datePickerOpenStatus.lastUpdatedOn"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lastUpdatedOn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_filename">Filename</label>
+            <input type="text" class="form-control" name="filename" id="field_filename"
+                    ng-model="vm.media.filename"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_album">Album</label>
+            <select class="form-control" id="field_album" name="album" ng-model="vm.media.albumId" ng-options="album.id as album.name for album in vm.albums"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

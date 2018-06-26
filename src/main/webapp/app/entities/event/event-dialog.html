@@ -1,0 +1,72 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEventLabel">Create or edit a Event</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.event.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.event.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.event.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_day">Day</label>
+                <div class="input-group">
+                    <input id="field_day" type="text" class="form-control" name="day" uib-datepicker-popup="{{dateformat}}" ng-model="vm.event.day" is-open="vm.datePickerOpenStatus.day"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('day')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.event.description"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_language">Language</label>
+            <input type="text" class="form-control" name="language" id="field_language"
+                    ng-model="vm.event.language"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contentStatus">Content Status</label>
+            <input type="text" class="form-control" name="contentStatus" id="field_contentStatus"
+                    ng-model="vm.event.contentStatus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_uuid">Uuid</label>
+            <input type="text" class="form-control" name="uuid" id="field_uuid"
+                    ng-model="vm.event.uuid"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_generalEvent">General Event</label>
+            <select class="form-control" id="field_generalEvent" name="generalEvent" ng-model="vm.event.generalEventId" ng-options="generalEvent.id as generalEvent.name for generalEvent in vm.generalevents"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

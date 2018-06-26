@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "album",
+            "otherEntityName": "album",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "caption",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lastUpdatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdatedOn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "filename",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180626033610",
+    "entityTableName": "tbl_media",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

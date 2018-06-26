@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "generalEvent",
+            "otherEntityName": "generalEvent",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "day",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contentStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uuid",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180626033608",
+    "entityTableName": "tbl_events",
+    "dto": "mapstruct",
+    "pagination": "pager",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false
+}

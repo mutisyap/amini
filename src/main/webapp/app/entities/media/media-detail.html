@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span>Media</span> {{vm.media.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Caption</span></dt>
+        <dd>
+            <span>{{vm.media.caption}}</span>
+        </dd>
+        <dt><span>Created By</span></dt>
+        <dd>
+            <span>{{vm.media.createdBy}}</span>
+        </dd>
+        <dt><span>Created On</span></dt>
+        <dd>
+            <span>{{vm.media.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Last Updated By</span></dt>
+        <dd>
+            <span>{{vm.media.lastUpdatedBy}}</span>
+        </dd>
+        <dt><span>Last Updated On</span></dt>
+        <dd>
+            <span>{{vm.media.lastUpdatedOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Filename</span></dt>
+        <dd>
+            <span>{{vm.media.filename}}</span>
+        </dd>
+        <dt><span>Album</span></dt>
+        <dd>
+            <a ui-sref="album-detail({id:vm.media.albumId})">{{vm.media.albumName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="media-detail.edit({id:vm.media.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

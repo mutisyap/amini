@@ -1,0 +1,131 @@
+
+<div>
+    <h2><span>General Event</span> {{vm.generalEvent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.name}}</span>
+        </dd>
+        <dt><span>Type</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.type}}</span>
+        </dd>
+        <dt><span>Day Of Week</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.dayOfWeek}}</span>
+        </dd>
+        <dt><span>Start Date</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.startDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.description}}</span>
+        </dd>
+        <dt><span>Age Limit</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.ageLimit}}</span>
+        </dd>
+        <dt><span>Host</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.host}}</span>
+        </dd>
+        <dt><span>Venue</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.venue}}</span>
+        </dd>
+        <dt><span>Latitude</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.latitude}}</span>
+        </dd>
+        <dt><span>Longitude</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.longitude}}</span>
+        </dd>
+        <dt><span>Cycle</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.cycle}}</span>
+        </dd>
+        <dt><span>Time</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.time}}</span>
+        </dd>
+        <dt><span>Language</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.language}}</span>
+        </dd>
+        <dt><span>Created By</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.createdBy}}</span>
+        </dd>
+        <dt><span>Created On</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.createdOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Last Updated By</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.lastUpdatedBy}}</span>
+        </dd>
+        <dt><span>Last Updated On</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.lastUpdatedOn | date:'medium'}}</span>
+        </dd>
+        <dt><span>Charges</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.charges}}</span>
+        </dd>
+        <dt><span>Contact 1</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact1}}</span>
+        </dd>
+        <dt><span>Contact 1 Value</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact1Value}}</span>
+        </dd>
+        <dt><span>Contact 2</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact2}}</span>
+        </dd>
+        <dt><span>Contact 2 Value</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact2Value}}</span>
+        </dd>
+        <dt><span>Contact 3</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact3}}</span>
+        </dd>
+        <dt><span>Contact 3 Value</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contact3Value}}</span>
+        </dd>
+        <dt><span>Charged</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.charged}}</span>
+        </dd>
+        <dt><span>Content Status</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.contentStatus}}</span>
+        </dd>
+        <dt><span>Uuid</span></dt>
+        <dd>
+            <span>{{vm.generalEvent.uuid}}</span>
+        </dd>
+        <dt><span>Organization</span></dt>
+        <dd>
+            <a ui-sref="organization-detail({id:vm.generalEvent.organizationId})">{{vm.generalEvent.organizationName}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="general-event-detail.edit({id:vm.generalEvent.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>
