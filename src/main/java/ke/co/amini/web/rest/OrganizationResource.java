@@ -1,11 +1,12 @@
 package ke.co.amini.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import io.github.jhipster.web.util.ResponseUtil;
 import ke.co.amini.service.OrganizationService;
+import ke.co.amini.service.dto.OrganizationDTO;
+import ke.co.amini.service.dto.RegisterOrganizationDTO;
 import ke.co.amini.web.rest.errors.BadRequestAlertException;
 import ke.co.amini.web.rest.util.HeaderUtil;
-import ke.co.amini.service.dto.OrganizationDTO;
-import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +49,17 @@ public class OrganizationResource {
             throw new BadRequestAlertException("A new organization cannot already have an ID", ENTITY_NAME, "idexists");
         }
         OrganizationDTO result = organizationService.save(organizationDTO);
+        return ResponseEntity.created(new URI("/api/organizations/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+
+    @PostMapping("/organizations/register")
+    @Timed
+    public ResponseEntity<OrganizationDTO> registerOrganization(@RequestBody RegisterOrganizationDTO registerOrganizationDTO) throws URISyntaxException {
+        log.debug("REST request to register Organization : {}", registerOrganizationDTO);
+
+        OrganizationDTO result = organizationService.register(registerOrganizationDTO);
         return ResponseEntity.created(new URI("/api/organizations/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
