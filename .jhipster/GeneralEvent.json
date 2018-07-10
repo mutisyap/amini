@@ -125,7 +125,6 @@
     "changelogDate": "20180626033607",
     "entityTableName": "tbl_general_events",
     "dto": "mapstruct",
-    "pagination": "pager",
     "service": "serviceClass",
     "jpaMetamodelFiltering": false
 }

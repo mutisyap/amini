@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
     "fields": [
         {
             "fieldName": "type",
@@ -73,9 +80,9 @@
         }
     ],
     "changelogDate": "20180626033606",
-    "entityTableName": "tbl_organizations",
     "dto": "mapstruct",
-    "pagination": "pager",
     "service": "serviceClass",
-    "jpaMetamodelFiltering": false
+    "entityTableName": "tbl_organizations",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
 }

@@ -4,15 +4,10 @@ import com.codahale.metrics.annotation.Timed;
 import ke.co.amini.service.GeneralEventService;
 import ke.co.amini.web.rest.errors.BadRequestAlertException;
 import ke.co.amini.web.rest.util.HeaderUtil;
-import ke.co.amini.web.rest.util.PaginationUtil;
 import ke.co.amini.service.dto.GeneralEventDTO;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -84,17 +79,14 @@ public class GeneralEventResource {
     /**
      * GET  /general-events : get all the generalEvents.
      *
-     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of generalEvents in body
      */
     @GetMapping("/general-events")
     @Timed
-    public ResponseEntity<List<GeneralEventDTO>> getAllGeneralEvents(Pageable pageable) {
-        log.debug("REST request to get a page of GeneralEvents");
-        Page<GeneralEventDTO> page = generalEventService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/general-events");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
+    public List<GeneralEventDTO> getAllGeneralEvents() {
+        log.debug("REST request to get all GeneralEvents");
+        return generalEventService.findAll();
+        }
 
     /**
      * GET  /general-events/:id : get the "id" generalEvent.

@@ -30,7 +30,6 @@
     "changelogDate": "20180626033609",
     "entityTableName": "tbl_albums",
     "dto": "mapstruct",
-    "pagination": "pager",
     "service": "serviceClass",
     "jpaMetamodelFiltering": false
 }

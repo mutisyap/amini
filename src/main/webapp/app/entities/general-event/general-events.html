@@ -17,36 +17,36 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="type"><span>Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dayOfWeek"><span>Day Of Week</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="startDate"><span>Start Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="description"><span>Description</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="ageLimit"><span>Age Limit</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="host"><span>Host</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="venue"><span>Venue</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="latitude"><span>Latitude</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="longitude"><span>Longitude</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="cycle"><span>Cycle</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="time"><span>Time</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="language"><span>Language</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdBy"><span>Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdOn"><span>Created On</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lastUpdatedBy"><span>Last Updated By</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lastUpdatedOn"><span>Last Updated On</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="charges"><span>Charges</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact1"><span>Contact 1</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact1Value"><span>Contact 1 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact2"><span>Contact 2</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact2Value"><span>Contact 2 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact3"><span>Contact 3</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contact3Value"><span>Contact 3 Value</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="charged"><span>Charged</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contentStatus"><span>Content Status</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="uuid"><span>Uuid</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="organizationName"><span>Organization</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Type</span></th>
+                    <th><span>Day Of Week</span></th>
+                    <th><span>Start Date</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>Age Limit</span></th>
+                    <th><span>Host</span></th>
+                    <th><span>Venue</span></th>
+                    <th><span>Latitude</span></th>
+                    <th><span>Longitude</span></th>
+                    <th><span>Cycle</span></th>
+                    <th><span>Time</span></th>
+                    <th><span>Language</span></th>
+                    <th><span>Created By</span></th>
+                    <th><span>Created On</span></th>
+                    <th><span>Last Updated By</span></th>
+                    <th><span>Last Updated On</span></th>
+                    <th><span>Charges</span></th>
+                    <th><span>Contact 1</span></th>
+                    <th><span>Contact 1 Value</span></th>
+                    <th><span>Contact 2</span></th>
+                    <th><span>Contact 2 Value</span></th>
+                    <th><span>Contact 3</span></th>
+                    <th><span>Contact 3 Value</span></th>
+                    <th><span>Charged</span></th>
+                    <th><span>Content Status</span></th>
+                    <th><span>Uuid</span></th>
+                    <th><span>Organization</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -109,8 +109,4 @@
             </tbody>
         </table>
     </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
-    </div>
-    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
 </div>

@@ -5,9 +5,9 @@
         .module('aminiApp')
         .controller('OrganizationDetailController', OrganizationDetailController);
 
-    OrganizationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Organization'];
+    OrganizationDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Organization', 'Location'];
 
-    function OrganizationDetailController($scope, $rootScope, $stateParams, previousState, entity, Organization) {
+    function OrganizationDetailController($scope, $rootScope, $stateParams, previousState, entity, Organization, Location) {
         var vm = this;
 
         vm.organization = entity;

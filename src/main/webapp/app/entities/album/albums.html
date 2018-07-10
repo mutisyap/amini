@@ -17,14 +17,14 @@
     <div class="table-responsive">
         <table class="jh-table table table-striped">
             <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="name"><span>Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="objectUuid"><span>Object Uuid</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdBy"><span>Created By</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdOn"><span>Created On</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lastUpdatedBy"><span>Last Updated By</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="lastUpdatedOn"><span>Last Updated On</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Object Uuid</span></th>
+                    <th><span>Created By</span></th>
+                    <th><span>Created On</span></th>
+                    <th><span>Last Updated By</span></th>
+                    <th><span>Last Updated On</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -63,8 +63,4 @@
             </tbody>
         </table>
     </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
-    </div>
-    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
 </div>

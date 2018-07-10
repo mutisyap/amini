@@ -6,11 +6,12 @@ import ke.co.amini.service.dto.EventDTO;
 import ke.co.amini.service.mapper.EventMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing Event.
@@ -46,14 +47,14 @@ public class EventService {
     /**
      * Get all the events.
      *
-     * @param pageable the pagination information
      * @return the list of entities
      */
     @Transactional(readOnly = true)
-    public Page<EventDTO> findAll(Pageable pageable) {
+    public List<EventDTO> findAll() {
         log.debug("Request to get all Events");
-        return eventRepository.findAll(pageable)
-            .map(eventMapper::toDto);
+        return eventRepository.findAll().stream()
+            .map(eventMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

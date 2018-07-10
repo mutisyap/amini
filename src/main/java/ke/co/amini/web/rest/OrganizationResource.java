@@ -4,15 +4,10 @@ import com.codahale.metrics.annotation.Timed;
 import ke.co.amini.service.OrganizationService;
 import ke.co.amini.web.rest.errors.BadRequestAlertException;
 import ke.co.amini.web.rest.util.HeaderUtil;
-import ke.co.amini.web.rest.util.PaginationUtil;
 import ke.co.amini.service.dto.OrganizationDTO;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -84,17 +79,14 @@ public class OrganizationResource {
     /**
      * GET  /organizations : get all the organizations.
      *
-     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of organizations in body
      */
     @GetMapping("/organizations")
     @Timed
-    public ResponseEntity<List<OrganizationDTO>> getAllOrganizations(Pageable pageable) {
-        log.debug("REST request to get a page of Organizations");
-        Page<OrganizationDTO> page = organizationService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/organizations");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
+    public List<OrganizationDTO> getAllOrganizations() {
+        log.debug("REST request to get all Organizations");
+        return organizationService.findAll();
+        }
 
     /**
      * GET  /organizations/:id : get the "id" organization.

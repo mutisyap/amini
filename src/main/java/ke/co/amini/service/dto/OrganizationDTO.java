@@ -3,6 +3,8 @@ package ke.co.amini.service.dto;
 
 import java.time.ZonedDateTime;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 import ke.co.amini.domain.enumeration.OrganizationType;
 
@@ -46,6 +48,10 @@ public class OrganizationDTO implements Serializable {
     private String contentStatus;
 
     private String uuid;
+
+    private Long locationId;
+
+    private String locationName;
 
     public Long getId() {
         return id;
@@ -189,6 +195,22 @@ public class OrganizationDTO implements Serializable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Long getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(Long locationId) {
+        this.locationId = locationId;
+    }
+
+    public String getLocationName() {
+        return locationName;
+    }
+
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
     @Override

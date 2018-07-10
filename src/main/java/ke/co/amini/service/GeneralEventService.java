@@ -6,11 +6,12 @@ import ke.co.amini.service.dto.GeneralEventDTO;
 import ke.co.amini.service.mapper.GeneralEventMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing GeneralEvent.
@@ -46,14 +47,14 @@ public class GeneralEventService {
     /**
      * Get all the generalEvents.
      *
-     * @param pageable the pagination information
      * @return the list of entities
      */
     @Transactional(readOnly = true)
-    public Page<GeneralEventDTO> findAll(Pageable pageable) {
+    public List<GeneralEventDTO> findAll() {
         log.debug("Request to get all GeneralEvents");
-        return generalEventRepository.findAll(pageable)
-            .map(generalEventMapper::toDto);
+        return generalEventRepository.findAll().stream()
+            .map(generalEventMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

@@ -6,11 +6,12 @@ import ke.co.amini.service.dto.AlbumDTO;
 import ke.co.amini.service.mapper.AlbumMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Service Implementation for managing Album.
@@ -46,14 +47,14 @@ public class AlbumService {
     /**
      * Get all the albums.
      *
-     * @param pageable the pagination information
      * @return the list of entities
      */
     @Transactional(readOnly = true)
-    public Page<AlbumDTO> findAll(Pageable pageable) {
+    public List<AlbumDTO> findAll() {
         log.debug("Request to get all Albums");
-        return albumRepository.findAll(pageable)
-            .map(albumMapper::toDto);
+        return albumRepository.findAll().stream()
+            .map(albumMapper::toDto)
+            .collect(Collectors.toCollection(LinkedList::new));
     }
 
     /**

@@ -94,7 +94,14 @@
         </createTable>
         <dropDefaultValue tableName="tbl_organizations" columnName="created_on" columnDataType="datetime"/>
         <dropDefaultValue tableName="tbl_organizations" columnName="last_updated_on" columnDataType="datetime"/>
-        
+
+    </changeSet>
+    <changeSet author="user" id="20180710070621">
+        <addColumn tableName="tbl_organizations">
+            <column name="location_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
     </changeSet>
     <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

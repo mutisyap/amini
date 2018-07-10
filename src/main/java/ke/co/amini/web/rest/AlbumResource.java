@@ -4,15 +4,10 @@ import com.codahale.metrics.annotation.Timed;
 import ke.co.amini.service.AlbumService;
 import ke.co.amini.web.rest.errors.BadRequestAlertException;
 import ke.co.amini.web.rest.util.HeaderUtil;
-import ke.co.amini.web.rest.util.PaginationUtil;
 import ke.co.amini.service.dto.AlbumDTO;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -84,17 +79,14 @@ public class AlbumResource {
     /**
      * GET  /albums : get all the albums.
      *
-     * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of albums in body
      */
     @GetMapping("/albums")
     @Timed
-    public ResponseEntity<List<AlbumDTO>> getAllAlbums(Pageable pageable) {
-        log.debug("REST request to get a page of Albums");
-        Page<AlbumDTO> page = albumService.findAll(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/albums");
-        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
-    }
+    public List<AlbumDTO> getAllAlbums() {
+        log.debug("REST request to get all Albums");
+        return albumService.findAll();
+        }
 
     /**
      * GET  /albums/:id : get the "id" album.

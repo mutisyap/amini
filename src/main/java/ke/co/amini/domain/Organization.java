@@ -74,6 +74,9 @@ public class Organization implements Serializable {
     @Column(name = "uuid")
     private String uuid;
 
+    @ManyToOne
+    private Location location;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -302,6 +305,19 @@ public class Organization implements Serializable {
 
     public void setUuid(String uuid) {
         this.uuid = uuid;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public Organization location(Location location) {
+        this.location = location;
+        return this;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

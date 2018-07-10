@@ -5,9 +5,9 @@
         .module('aminiApp')
         .controller('OrganizationDialogController', OrganizationDialogController);
 
-    OrganizationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Organization'];
+    OrganizationDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Organization', 'Location'];
 
-    function OrganizationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Organization) {
+    function OrganizationDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Organization, Location) {
         var vm = this;
 
         vm.organization = entity;
@@ -15,6 +15,7 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.locations = Location.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
